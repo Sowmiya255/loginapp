@@ -4,7 +4,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import AuthRouter from './Routers/AuthRouter.js';
+import Authdetails from './Routers/Authdetails.js';
 import './models/db.js'; 
+
 
 dotenv.config();
 
@@ -20,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/auth', AuthRouter);
-
+app.use('/name',Authdetails);
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}/`);
 });
